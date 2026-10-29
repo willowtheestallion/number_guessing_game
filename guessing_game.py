@@ -6,7 +6,11 @@ max_attempts = 7
 
 #range(1, max_attempts + 1) gives you attempt numbers 1 through 7, and the loop ends on its own after the last one.
 for attempt in range(1, max_attempts + 1):
-    user_input = int(input(f"Attempt {attempt}/{max_attempts} - Type in the guessed number: "))
+    try:
+      user_input = int(input(f"Attempt {attempt}/{max_attempts} - Type in the guessed number: "))
+    except ValueError:
+      print("Enter valid number")
+      continue
 
     if user_input == random_num:
       print(f"Congratulations! You guessed correctly in {attempt} attempts. The number is {random_num}")
@@ -16,5 +20,7 @@ for attempt in range(1, max_attempts + 1):
       print("Wrong!Go higher")
 else:
     print(f"Out of attempts. The number is {random_num}")
+
+
 
     
