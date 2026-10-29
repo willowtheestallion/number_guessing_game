@@ -10,3 +10,5 @@ while user_input != random_num:
     else:
        print("Wrong! Go higher.")
     user_input = int(input("Try again: "))
+
+print(f"You've guessed correctly. The number is {random_num}")
